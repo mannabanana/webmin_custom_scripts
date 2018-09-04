@@ -10,16 +10,17 @@ echo -e "	flags=R user=autoreply   argv=/etc/postfix/scripts/autoreply_login.pl 
 fi
 if grep -e '\<login\>' /etc/postfix/transport > /dev/null
 then
-sed -i '/login/s/#login.autoreply.mailtest.avionics/login.autoreply.mailtest.avionics/g' /etc/postfix/transport
+sed -i '/login/s/#login.autoreply.2100.gosniias.ru/login.autoreply.2100.gosniias.ru/g' /etc/postfix/transport
 else
-echo -e "login.autoreply.mailtest.avionics	autoreply_login:" >> /etc/postfix/transport
+echo -e "login.autoreply.2100.gosniias.ru	autoreply_login:" >> /etc/postfix/transport
 fi
 postmap /etc/postfix/transport
 if grep -e '\<login\>' /etc/postfix/virtual > /dev/null
 then
-sed -i '/login/s/#login@mailtest.avionics/login@mailtest.avionics/g' /etc/postfix/virtual
+sed -i '/login/s/#login@2100.gosniias.ru/login@2100.gosniias.ru/g' /etc/postfix/virtual
 else
-echo -e "login@mailtest.avionics login@mailtest.avionics	login@login.autoreply.mailtest.avionics" >> /etc/postfix/virtual
+echo -e "login@2100.gosniias.ru login@2100.gosniias.ru	login@login.autoreply.2100.gosniias.ru" >> /etc/postfix/virtual
 fi
 postmap /etc/postfix/virtual
+/bin/systemctl restart postfix.service
 rm -f /etc/webmin/scripts/autoreply_login.bash
