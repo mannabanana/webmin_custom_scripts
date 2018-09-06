@@ -1,6 +1,6 @@
 
 Настройка индивидуального автоответа
-![](autoreply_on_schedule/interface.png?raw=true)
+![Overview](interface.png)
 
 1. Создаем файл с текстом автоответа для конкретного пользователя < user name> в папке  /etc/postfix/autoreply_msg/:
 # mcedit /etc/postfix/autoreply_msg/<name user>.msg
