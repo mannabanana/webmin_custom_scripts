@@ -1,5 +1,6 @@
 
 Settings of the custom autoreply
+===
 ![Overview](interface.png)
 
 1. Создаем файл с текстом автоответа для конкретного пользователя < user name> в папке  /etc/postfix/autoreply_msg/:
